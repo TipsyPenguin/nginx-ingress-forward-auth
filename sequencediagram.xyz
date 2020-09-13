@@ -1,0 +1,13 @@
+title Nginx forward auth
+
+User->Auth:Register request
+Auth->User: Register response
+User->Auth: Login request
+Auth->User: Login response with Set-Cookies
+
+User->Nginx:Show profile request with session cookies
+Nginx->Auth: Check auth by session cookies
+Auth->Nginx: Auth response with X-Auth-* headers
+Nginx->App:  Show profile request with X-Auth-* headers
+App->Nginx: Profile info response
+Nginx->User: Profile info response

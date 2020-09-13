@@ -1,0 +1,24 @@
+replicaCount: 1
+
+fullnameOverride: "app"
+
+image: "tipsypenguin/profile-service:v1.0.1"
+
+service:
+  appKey: def00000b2a85d82cd0b4d3ddccc8cb9388b6fd41fe9a9f58e2194e4c41989149ce38416a9047391e7ed54e3663f0d668cfb1b6798b4a9030626e544efe73af07b1fb173
+  dbConnection: pgsql
+  type: NodePort
+  port: 8080
+
+postgresql:
+  enabled: true
+  postgresqlUsername: appuser
+  postgresqlPassword: apppasswd
+  postgresqlDatabase: appdb
+  persistence:
+    size: 0.1Gi
+  service:
+    port: "5432"
+
+ingress:
+  enabled: true

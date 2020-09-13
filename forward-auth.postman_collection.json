@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "9d232d95-1b04-4126-9852-4f0b9ec5758d",
+		"name": "FORWARD AUTH COLLECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Регистрация пользователя 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de5688a5-0b86-47d8-9c30-ccc73e560407",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "36d2ecf3-6ea5-4318-9fbb-e501d1c96fee",
+						"exec": [
+							"pm.collectionVariables.set(\"email\", pm.variables.replaceIn('{{$randomEmail}}'))",
+							"pm.collectionVariables.set(\"password\", pm.variables.replaceIn('{{$randomPassword}}'))",
+							"pm.collectionVariables.set(\"username\", pm.variables.replaceIn('{{$randomUserName}}'))",
+							"pm.collectionVariables.set(\"firstName\", pm.variables.replaceIn('{{$randomFirstName}}'))",
+							"pm.collectionVariables.set(\"lastName\", pm.variables.replaceIn('{{$randomLastName}}')) ",
+							"pm.collectionVariables.set(\"phone\", pm.variables.replaceIn('{{$randomPhoneNumber}}'))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Неудачное получение пользователя 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/show-profile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"show-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вход пользователя 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение пользователя 1 после входа",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{username}}\",\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"phone\": \"{{phone}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/update-profile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение пользователя 1 после входа",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/show-profile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"show-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Выход пользователя 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/logout",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Регистрация пользователя 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de5688a5-0b86-47d8-9c30-ccc73e560407",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b0730e02-25c3-4727-b6b4-a148bfdabc7d",
+						"exec": [
+							"pm.collectionVariables.set(\"email\", pm.variables.replaceIn('{{$randomEmail}}'))",
+							"pm.collectionVariables.set(\"password\", pm.variables.replaceIn('{{$randomPassword}}'))",
+							"pm.collectionVariables.set(\"username\", pm.variables.replaceIn('{{$randomUserName}}'))",
+							"pm.collectionVariables.set(\"firstName\", pm.variables.replaceIn('{{$randomFirstName}}'))",
+							"pm.collectionVariables.set(\"lastName\", pm.variables.replaceIn('{{$randomLastName}}')) ",
+							"pm.collectionVariables.set(\"phone\", pm.variables.replaceIn('{{$randomPhoneNumber}}'))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вход пользователя 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение пользователя 1 после входа пользователя 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{username}}\",\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"phone\": \"{{phone}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/update-profile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение пользователя 1 после входа пользователя 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/show-profile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"show-profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1ee91e1b-f10a-4618-bc79-460041c470f6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9510f67a-2024-4b50-86c2-a27d57f6748f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0344f721-4a3d-4a56-be19-953f30c695fa",
+			"key": "email",
+			"value": ""
+		},
+		{
+			"id": "d6d73677-9760-497f-9b60-2160f49e9eec",
+			"key": "firstName",
+			"value": ""
+		},
+		{
+			"id": "9f91e71b-1a29-40c7-897b-92c64d441129",
+			"key": "lastName",
+			"value": ""
+		},
+		{
+			"id": "a4e4a7c4-3088-4d6c-abd4-f7e2fbeba9d5",
+			"key": "password",
+			"value": ""
+		},
+		{
+			"id": "308cf056-97f3-46f5-a1c7-f9d43295ac55",
+			"key": "username",
+			"value": ""
+		},
+		{
+			"id": "0aeaa80e-8344-434b-9b18-711a0ef9b6d1",
+			"key": "baseUrl",
+			"value": "arch.homework"
+		},
+		{
+			"id": "3e1a3732-ded3-4758-994e-915ecf33e794",
+			"key": "phone",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
